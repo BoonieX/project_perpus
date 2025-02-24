@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('buku', BukuController::class);
@@ -10,6 +11,11 @@ Route::get('/', function () {
     return redirect('home');
 });
 
+<<<<<<< HEAD
+Route::resource('home',DashboardController::class);
+Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');
+=======
+>>>>>>> e13868f372bd95a0da1a422f6e909fd60fec08bb
 
 
 Route::controller(PeminjamanController::class)->group(function () {

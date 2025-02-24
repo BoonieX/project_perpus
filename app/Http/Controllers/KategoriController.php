@@ -1,23 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Peminjaman;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-<<<<<<< HEAD
-        $peminjaman = peminjaman::all();
-        return view('home',compact('peminjaman'));
-=======
-        return view('layouts.dashboard');
->>>>>>> ed4c76684617d7c943985a9fac207c8726d1ae79
+        return view('category.category');
     }
 
     /**
