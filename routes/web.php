@@ -11,13 +11,6 @@ Route::get('/', function () {
     return redirect('home');
 });
 
-<<<<<<< HEAD
-Route::resource('home',DashboardController::class);
-Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');
-=======
->>>>>>> e13868f372bd95a0da1a422f6e909fd60fec08bb
-
-
 Route::controller(PeminjamanController::class)->group(function () {
     Route::get('/peminjaman', 'index')->name('peminjaman.index');
     Route::get('/peminjaman/create', 'create')->name('peminjaman.create');
@@ -30,3 +23,6 @@ Route::resource('buku', BukuController::class);
 
 Route::resource('home',DashboardController::class);
 });
+
+Route::resource('home',DashboardController::class);
+Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');

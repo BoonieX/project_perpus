@@ -30,10 +30,8 @@
         <div class="content w-100">
             @include('layouts.navbar')
 
-<<<<<<< HEAD
             <div class="container mt-4">
                 @yield('content')
-=======
             <!-- Main Content -->
             <div id="content">
 
@@ -283,7 +281,6 @@
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
->>>>>>> ed4c76684617d7c943985a9fac207c8726d1ae79
             </div>
         </div>
     </div>

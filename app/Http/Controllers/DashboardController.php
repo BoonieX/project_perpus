@@ -12,12 +12,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         $peminjaman = peminjaman::all();
         return view('home',compact('peminjaman'));
-=======
         return view('layouts.dashboard');
->>>>>>> ed4c76684617d7c943985a9fac207c8726d1ae79
     }
 
     /**
