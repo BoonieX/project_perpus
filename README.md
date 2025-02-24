@@ -67,7 +67,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 # project_perpus
 
 # cara install
-    - composer intall
+    - composer install
     - cp .env.example .env
     - php artisan key:generate
     - env 
