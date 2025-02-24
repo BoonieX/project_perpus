@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
 
+Route::resource('buku', BukuController::class);
 use App\Http\Controllers\PeminjamanController;
 Route::get('/', function () {
     return redirect('home');
