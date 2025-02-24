@@ -13,7 +13,6 @@
                 <th>Nama</th>
                 <th>Alamat</th>
                 <th>No. Telp</th>
-                <th>Email</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -24,7 +23,6 @@
                 <td>{{ $a->nama }}</td>
                 <td>{{ $a->alamat }}</td>
                 <td>{{ $a->no_telp }}</td>
-                <td>{{ $a->email }}</td>
                 <td>
                     <a href="{{ route('anggota.edit', $a->id) }}" class="btn btn-warning btn-sm">Edit</a>
                     <form action="{{ route('anggota.destroy', $a->id) }}" method="POST" class="d-inline">

@@ -11,15 +11,12 @@ use App\Http\Controllers\PeminjamanController;
 Route::get('/', function () {
     return redirect('home');
 });
-<<<<<<< HEAD
 Route::resource('home',DashboardController::class);
 Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');
 
 Route::resource('home',DashboardController::class);
 Route::get('/admin-anggota',[AnggotaController::class,'index'])->name('admin.anggota');
 
-=======
->>>>>>> refs/remotes/origin/main
 
 Route::controller(PeminjamanController::class)->group(function () {
     Route::get('/peminjaman', 'index')->name('peminjaman.index');
@@ -29,13 +26,10 @@ Route::controller(PeminjamanController::class)->group(function () {
     Route::put('/peminjaman/{id}', 'update')->name('peminjaman.update');
     Route::delete('/peminjaman/{id}', 'destroy')->name('peminjaman.destroy');
 });
-<<<<<<< HEAD
 Route::resource('buku', BukuController::class);
 Route::resource('home',DashboardController::class);
 Route::resource('anggota', AnggotaController::class);
 
-=======
 
 Route::resource('home',DashboardController::class);
 Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');
->>>>>>> refs/remotes/origin/main

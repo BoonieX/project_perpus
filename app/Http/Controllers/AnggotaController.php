@@ -31,7 +31,6 @@ class AnggotaController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'nim' => 'required|max:100|unique:anggota,nim',
             'alamat' => 'required|string|max:255',
             'telepon' => 'required|string|max:15',
         ]);
@@ -54,7 +53,7 @@ class AnggotaController extends Controller
     public function edit(Anggota $anggota)
     {
         $anggota = Anggota::findOrFail($anggota);
-        return view('anggota.edit', compact('anggota'));
+    return view('anggota.edit', compact('anggota'));
     }
 
     /**
@@ -64,7 +63,6 @@ class AnggotaController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'nim' => 'required|max:100|unique:anggota,nim,' . $anggota,
             'alamat' => 'required|string|max:255',
             'telepon' => 'required|string|max:15',
         ]);
