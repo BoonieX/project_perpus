@@ -12,8 +12,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $peminjaman = peminjaman::all();
-        return view('home',compact('peminjaman'));
         return view('layouts.dashboard');
     }
 

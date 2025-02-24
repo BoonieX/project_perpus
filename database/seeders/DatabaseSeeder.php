@@ -18,5 +18,12 @@ class DatabaseSeeder extends Seeder
 
         Anggota::factory(10)->create([
         ]);
+        $this->call([
+            PengembalianSeeder::class,
+        ]);
+
+        $this->call([
+            PeminjamanSeeder::class,
+        ]);
     }
 }
