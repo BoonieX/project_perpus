@@ -14,7 +14,7 @@
             </ul>
         </div>
     @endif
-
+    <p>ID Anggota: {{ $anggota->id }}</p>
     <form action="{{ route('anggota.update', $anggota->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -25,13 +25,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="email" value="{{ old('email', $anggota->email) }}" required>
+            <label for="alamat" class="form-label">Alamat</label>
+            <textarea name="alamat" class="form-control" id="alamat" required>{{ old('alamat', $anggota->alamat) }}</textarea>
         </div>
 
         <div class="mb-3">
-            <label for="alamat" class="form-label">Alamat</label>
-            <textarea name="alamat" class="form-control" id="alamat" required>{{ old('alamat', $anggota->alamat) }}</textarea>
+            <label for="no_telp" class="form-label">No telepon</label>
+            <textarea name="no_telp" class="form-control" id="no_telp" required>{{ old('no_telp', $anggota->no_telp) }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>

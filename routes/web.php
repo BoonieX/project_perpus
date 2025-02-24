@@ -30,6 +30,4 @@ Route::resource('buku', BukuController::class);
 Route::resource('home',DashboardController::class);
 Route::resource('anggota', AnggotaController::class);
 
-
-Route::resource('home',DashboardController::class);
 Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');

@@ -32,7 +32,7 @@ class AnggotaController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'alamat' => 'required|string|max:255',
-            'telepon' => 'required|string|max:15',
+            'no_telp' => 'required|string|max:15',
         ]);
 
         Anggota::create($validated);
@@ -50,24 +50,23 @@ class AnggotaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Anggota $anggota)
+    public function edit( $id)
     {
-        $anggota = Anggota::findOrFail($anggota);
-    return view('anggota.edit', compact('anggota'));
+        $anggota= Anggota::find($id);
+        return view('anggota.edit', compact('anggota'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Anggota $anggota)
+    public function update(Request $request,  $id)
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'alamat' => 'required|string|max:255',
-            'telepon' => 'required|string|max:15',
+            'no_telp' => 'required|string|max:15',
         ]);
-
-        $anggota = Anggota::findOrFail($anggota);
+$anggota= Anggota::find($id);
         $anggota->update($validated);
 
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil diperbarui.');
@@ -76,9 +75,9 @@ class AnggotaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Anggota $anggota)
+    public function destroy( $id)
     {
-        $anggota = Anggota::findOrFail($anggota);
+        $anggota = Anggota::findOrFail($id);
         $anggota->delete();
 
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil dihapus.');
