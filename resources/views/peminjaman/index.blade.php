@@ -1,8 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('title', 'Daftar Peminjaman')
 
 @section('content')
+
 <div class="container mt-5">
     <h2>Data Peminjaman</h2>
     <a href="{{ route('peminjaman.create') }}" class="btn btn-primary mb-3">Tambah Peminjaman</a>
