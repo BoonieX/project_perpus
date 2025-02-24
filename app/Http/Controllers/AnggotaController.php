@@ -12,7 +12,8 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        //
+        $anggota = Anggota::all(); // Mengambil semua data anggota dari database
+    return view('anggota.index', compact('anggota'));
     }
 
     /**
@@ -20,7 +21,7 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        //
+        return view('anggota.create');
     }
 
     /**
@@ -28,7 +29,15 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'nim' => 'required|max:100|unique:anggota,nim',
+            'alamat' => 'required|string|max:255',
+            'telepon' => 'required|string|max:15',
+        ]);
+
+        Anggota::create($validated);
+        return redirect()->route('anggota.index')->with('success', 'Anggota berhasil ditambahkan.');
     }
 
     /**
@@ -44,7 +53,8 @@ class AnggotaController extends Controller
      */
     public function edit(Anggota $anggota)
     {
-        //
+        $anggota = Anggota::findOrFail($anggota);
+        return view('anggota.edit', compact('anggota'));
     }
 
     /**
@@ -52,7 +62,17 @@ class AnggotaController extends Controller
      */
     public function update(Request $request, Anggota $anggota)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'nim' => 'required|max:100|unique:anggota,nim,' . $anggota,
+            'alamat' => 'required|string|max:255',
+            'telepon' => 'required|string|max:15',
+        ]);
+
+        $anggota = Anggota::findOrFail($anggota);
+        $anggota->update($validated);
+
+        return redirect()->route('anggota.index')->with('success', 'Anggota berhasil diperbarui.');
     }
 
     /**
@@ -60,6 +80,9 @@ class AnggotaController extends Controller
      */
     public function destroy(Anggota $anggota)
     {
-        //
+        $anggota = Anggota::findOrFail($anggota);
+        $anggota->delete();
+
+        return redirect()->route('anggota.index')->with('success', 'Anggota berhasil dihapus.');
     }
 }

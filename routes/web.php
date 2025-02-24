@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\AnggotaController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('buku', BukuController::class);
@@ -10,12 +11,11 @@ use App\Http\Controllers\PeminjamanController;
 Route::get('/', function () {
     return redirect('home');
 });
-
-<<<<<<< HEAD
 Route::resource('home',DashboardController::class);
 Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');
-=======
->>>>>>> e13868f372bd95a0da1a422f6e909fd60fec08bb
+
+Route::resource('home',DashboardController::class);
+Route::get('/admin-anggota',[AnggotaController::class,'index'])->name('admin.anggota');
 
 
 Route::controller(PeminjamanController::class)->group(function () {
@@ -25,8 +25,8 @@ Route::controller(PeminjamanController::class)->group(function () {
     Route::get('/peminjaman/{id}/edit', 'edit')->name('peminjaman.edit');
     Route::put('/peminjaman/{id}', 'update')->name('peminjaman.update');
     Route::delete('/peminjaman/{id}', 'destroy')->name('peminjaman.destroy');
-
-Route::resource('buku', BukuController::class);
-
-Route::resource('home',DashboardController::class);
 });
+Route::resource('buku', BukuController::class);
+Route::resource('home',DashboardController::class);
+Route::resource('anggota', AnggotaController::class);
+
