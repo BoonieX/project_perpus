@@ -70,3 +70,12 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     - composer intall
     - cp .env.example .env
     - php artisan key:generate
+    - env 
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1   
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
+    - php artisan migrate
+    - php artisan serve
