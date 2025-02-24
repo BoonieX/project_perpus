@@ -17,8 +17,8 @@ use Illuminate\Database\Eloquent\Model;
     public $timestamps = true; // Pastikan timestamps digunakan (default true)
         protected $fillable = ['id_anggota', 'id_buku', 'tanggal_pinjam', 'tanggal_kembali', 'status'];
 
-        public function denda()
-        {
-            return $this->hasOne(Denda::class, 'id_peminjaman');
-        }
+        // public function denda()
+        // {
+        //     return $this->hasOne(Denda::class, 'id_peminjaman');
+        // }
     }
