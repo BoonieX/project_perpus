@@ -24,14 +24,7 @@
 </head>
 <body>
 
-    <div class="d-flex">
-        @include('layouts.sidebar')
 
-        <div class="content w-100">
-            @include('layouts.navbar')
-
-            <div class="container mt-4">
-                @yield('content')
             <!-- Main Content -->
             <div id="content">
 
@@ -238,7 +231,12 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                
+    <div class="d-flex">
+        @include('layouts.sidebar')
 
+            <div class="container mt-4">
+                @yield('content')
                 @yield('isi')
 
             </div>
