@@ -97,6 +97,13 @@
             <span>Charts</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.category') }}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Category</span></a>
+    </li>
+
+
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="tables.html">

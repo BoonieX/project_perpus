@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,4 +13,5 @@ Route::get('/', function () {
 });
 
 Route::resource('home',DashboardController::class);
+Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');
 
