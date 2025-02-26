@@ -11,12 +11,12 @@ class PeminjamanController extends Controller
     public function index()
     {
         $peminjaman = Peminjaman::all();
-        return view('peminjaman.index', compact('peminjaman'));
+        return view('layouts.peminjaman.index', compact('peminjaman'));
     }
 
     public function create()
     {
-        return view('peminjaman.create');
+        return view('layouts.peminjaman.create');
     }
 
     public function store(Request $request)
@@ -31,13 +31,13 @@ class PeminjamanController extends Controller
         
 
         Peminjaman::create($request->all());
-        return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil ditambahkan!');
+        return redirect()->route('layouts.peminjaman.index')->with('success', 'Peminjaman berhasil ditambahkan!');
     }
 
     public function edit($id)
     {
         $peminjaman = Peminjaman::findOrFail($id);
-        return view('peminjaman.edit', compact('peminjaman'));
+        return view('layouts.peminjaman.edit', compact('peminjaman'));
     }
     
 
@@ -54,12 +54,12 @@ class PeminjamanController extends Controller
         $peminjaman = Peminjaman::findOrFail($id);
         $peminjaman->update($request->all());
 
-        return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil diperbarui!');
+        return redirect()->route('layouts.peminjaman.index')->with('success', 'Peminjaman berhasil diperbarui!');
     }
 
     public function destroy($id)
     {
         Peminjaman::findOrFail($id)->delete();
-        return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil dihapus!');
+        return redirect()->route('layouts.peminjaman.index')->with('success', 'Peminjaman berhasil dihapus!');
     }
 }

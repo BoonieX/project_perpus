@@ -1,6 +1,5 @@
-// resources/views/anggota/create.blade.php
 
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('title', 'Tambah Anggota')
 @section('content')

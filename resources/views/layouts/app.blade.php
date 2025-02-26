@@ -13,6 +13,8 @@
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    
+
     <style type="text/tailwindcss">
         .btn {
           @apply bg-white rounded-md px-4 py-2 text-center font-medium text-slate-500 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50 h-10;
@@ -73,7 +75,7 @@
         @include('layouts.sidebar')
 
         <div class="content w-100">
-            @include('layouts.navbar')
+
 
             <div class="container mt-4">
                 @yield('content')

@@ -13,7 +13,7 @@ class AnggotaController extends Controller
     public function index()
     {
         $anggota = Anggota::all(); // Mengambil semua data anggota dari database
-    return view('anggota.index', compact('anggota'));
+    return view('layouts.anggota.index', compact('anggota'));
     }
 
     /**
@@ -21,7 +21,7 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        return view('anggota.create');
+        return view('layouts.anggota.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class AnggotaController extends Controller
         ]);
 
         Anggota::create($validated);
-        return redirect()->route('anggota.index')->with('success', 'Anggota berhasil ditambahkan.');
+        return redirect()->route('layouts.anggota.index')->with('success', 'Anggota berhasil ditambahkan.');
     }
 
     /**
@@ -53,7 +53,7 @@ class AnggotaController extends Controller
     public function edit( $id)
     {
         $anggota= Anggota::find($id);
-        return view('anggota.edit', compact('anggota'));
+        return view('layouts.anggota.edit', compact('anggota'));
     }
 
     /**
@@ -69,7 +69,7 @@ class AnggotaController extends Controller
 $anggota= Anggota::find($id);
         $anggota->update($validated);
 
-        return redirect()->route('anggota.index')->with('success', 'Anggota berhasil diperbarui.');
+        return redirect()->route('layouts.anggota.index')->with('success', 'Anggota berhasil diperbarui.');
     }
 
     /**
@@ -80,6 +80,6 @@ $anggota= Anggota::find($id);
         $anggota = Anggota::findOrFail($id);
         $anggota->delete();
 
-        return redirect()->route('anggota.index')->with('success', 'Anggota berhasil dihapus.');
+        return redirect()->route('layouts.anggota.index')->with('success', 'Anggota berhasil dihapus.');
     }
 }

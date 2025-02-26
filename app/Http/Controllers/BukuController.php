@@ -13,7 +13,7 @@ class BukuController extends Controller
     public function index()
     {
         $buku = Buku::all();
-        return view('buku.index', compact('buku'));
+        return view('layouts.buku.index', compact('buku'));
     }
 
     /**
@@ -21,7 +21,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        return view('buku.create');
+        return view('layouts.buku.create');
     }
 
     /**
@@ -30,7 +30,7 @@ class BukuController extends Controller
     public function store(Request $request)
     {
         Buku::create($request->all());
-        return redirect()->route('buku.index');
+        return redirect()->route('layouts.buku.index');
     }
 
     /**
