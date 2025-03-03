@@ -1,9 +1,9 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Buku;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
+use App\Models\Buku;
 
 class BukuSeeder extends Seeder
 {
@@ -12,15 +12,6 @@ class BukuSeeder extends Seeder
      */
     public function run(): void
     {
-        Buku::create([
-            'judul' => 'Laskar Pelangi',
-            'pengarang' => 'Andrea Hirata',
-            'penerbit' => 'Bentang Pustaka',
-            'tahun_terbit' => 2005,
-            'isbn' => '9789791227780',
-            'jumlah_halaman' => 529,
-            'kategori' => 'Fiksi',
-            'stok' => 10,
-        ]);
+        Buku::factory(50)->create();
     }
 }

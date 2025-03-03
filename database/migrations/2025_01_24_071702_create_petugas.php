@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('petugas', function (Blueprint $table) {
-            $table->id('id_petugas');
+            $table->id(); // Creates `id` as BIGINT UNSIGNED PRIMARY KEY
+            $table->string('nama'); // Example field
             $table->timestamps();
         });
     }

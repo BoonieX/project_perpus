@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Anggota;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Peminjaman;
-use App\Models\User;
 use App\Models\Buku;
 
 /**
@@ -17,8 +17,8 @@ class PeminjamanFactory extends Factory
     public function definition()
     {
         return [
-            'id_anggota' => User::inRandomOrder()->first()->id ?? User::factory()->create()->id,
-            'id_buku' => Buku::inRandomOrder()->first()->id ?? Buku::factory()->create()->id,
+            'id_anggota' => Anggota::all()->random()->id,
+            'id_buku' => Buku::all()->random()->id,
             'tanggal_pinjam' => $this->faker->date(),
             'tanggal_kembali' => $this->faker->optional()->date(),
             'status' => $this->faker->randomElement(['Dipinjam', 'Dikembalikan']),
