@@ -11,11 +11,10 @@ Route::get('/', function () {
     return redirect('home');
 });
 
-<<<<<<< HEAD
+
 Route::resource('home',DashboardController::class);
 Route::get('/admin-category',[KategoriController::class,'index'])->name('admin.category');
-=======
->>>>>>> e13868f372bd95a0da1a422f6e909fd60fec08bb
+Route ::get('/add-category',[KategoriController::class,'create'])->name('add.category');
 
 
 Route::controller(PeminjamanController::class)->group(function () {
@@ -25,6 +24,7 @@ Route::controller(PeminjamanController::class)->group(function () {
     Route::get('/peminjaman/{id}/edit', 'edit')->name('peminjaman.edit');
     Route::put('/peminjaman/{id}', 'update')->name('peminjaman.update');
     Route::delete('/peminjaman/{id}', 'destroy')->name('peminjaman.destroy');
+
 
 Route::resource('buku', BukuController::class);
 
