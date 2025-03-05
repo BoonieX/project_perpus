@@ -17,7 +17,6 @@ class AnggotaSeeder extends Seeder
             'nama'=> 'Fiqo',
             'alamat'=> 'Klabang',
             'no_telp'=> '082334678958',
-            'email'=> 'fiqo@gmail.com',
         ]);
     }
 }

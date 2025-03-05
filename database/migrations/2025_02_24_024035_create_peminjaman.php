@@ -8,9 +8,9 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('peminjaman', function (Blueprint $table) {
-            $table->id('id_peminjaman');
-            $table->unsignedBigInteger('id_anggota');
-            $table->unsignedBigInteger('id_buku');
+            $table->id();
+            $table->foreignId('id_anggota')->constrained('anggota')->cascadeOnDelete();
+            $table->foreignId('id_buku')->constrained('buku')->cascadeOnDelete();
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali')->nullable();
             $table->enum('status', ['Dipinjam', 'Dikembalikan']);

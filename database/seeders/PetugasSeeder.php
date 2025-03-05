@@ -2,16 +2,17 @@
 
 namespace Database\Seeders;
 
+use App\Models\Petugas;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Buku;
 
-class BukuSeeder extends Seeder
+class PetugasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Buku::factory(50)->create();
+        Petugas::factory(50)->create();
     }
 }

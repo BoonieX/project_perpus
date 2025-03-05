@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Anggota>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\=Petugas>
  */
-class AnggotaFactory extends Factory
+class PetugasFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,9 @@ class AnggotaFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => $this->faker->name(),
-            'alamat' => $this->faker->address(),
-            'no_telp' => $this->faker->phoneNumber(),
+            'nama'=> $this->faker->name(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
